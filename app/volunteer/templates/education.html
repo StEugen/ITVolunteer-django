@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/education.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" 
+     rel="stylesheet">
+    <title>Education IT Hub</title>
+    <script src="{{ url_for('static', filename='js/education.js') }}">
+    </script>
+</head>
+<body>
+    <header>
+     <img src="{{ url_for('static', filename='images/image2.jpeg')}}" alt="УлГПУ" id="header-img">
+       <h2>IT HUB</h2>
+        <nav id="navbar">
+            <ul class="nav-list">
+                <li>
+                    <a class="links_pages" href="{{ url_for('index') }}">Новости</a>
+                </li>
+                <li>
+                    <a class="links_pages" href="{{ url_for('education') }}">Обучение</a>
+                </li>
+                <li>
+                    <a class="links_pages" href="{{ url_for('dashboard')}}">Доска объявлений</a>
+                </li>
+                <li>
+                    <a href="" id="personal-account">Личный кабинет</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="divBlock">
+            <button>Курс IT-Волонтеров</button>
+            <article id="dropdownDIV">
+                <p>
+                    Студенческое сообщество IT HUB предоставляет каждому студенту стать IT-Волонтером.
+                    Для получения удостоверения IT-Волонтера требуется пройти курс.
+                    Вы можете перейти к странице "Курс IT-Волонтера", если нажмете на кнопку ниже.
+                </p>
+                <a href="" id="course">Начать</a>
+            </article>
+        </div>
+
+        <div class="divBlock" id="front">
+            <button onclick="frontFunction()" class="pointer">Гид по Frontend</button>
+                <article id="frontDIV" class="clicked">
+                    <p>
+                        Test
+                    </p>
+                </article>
+        </div>
+
+        <div class="divBlock">
+            <button onclick="backFunction()" class="pointer">Гид по Backend</button>
+                <article id="backDIV" class="clicked">
+                    <p>
+                        Test
+                    </p>
+                </article>
+        </div>
+
+        <div class="divBlock">
+            <button onclick="roboFunction()" class="pointer">Гид по Robotics</button>
+                <article id="roboDIV" class="clicked">
+                    <p>
+                        Test
+                    </p>
+                </article>
+        </div>
+    </main>
+    <footer>
+        <img src="{{ url_for('static', filename='images/image1.jpeg') }}" alt="ФФМиТО" id="fmito-img">
+        <h3>IT HUB - МЕСТО ГДЕ СОБИРАЮТСЯ IT-ВОЛОНТЁРЫ</h3>
+        <img src="{{ url_for('static', filename='images/vk.jpg') }}" alt="vk" id="vk-img" >
+        <img src="{{ url_for('static', filename='images/tg.jpg') }}" alt="tg" id="tg-img" >
+    </footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* start of the same code */
+html, body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    height: 100vh; 
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #d9d9d9;
+  }
+  
+  header {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    height:120px;
+    margin-bottom: 100px;
+  }
+  
+  nav{
+    font-size: 18px;
+    display: inline-block;
+    float: none;
+  }
+  
+  #header-img {
+    height: 80%;
+    padding-left: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    }
+  
+  h2 {
+    font-size: 45px;
+    padding-left: 40px;
+    padding-top: 0;
+    color: #f0f0f0;
+    }
+  
+  a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .links_pages:hover{
+    text-decoration: underline;
+  }
+      
+  ul {
+    list-style: none;
+    display: flex;
+    padding-top: 0;
+    }
+      
+  li {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 30px;
+   }
+  
+   #personal-account {
+    font-size: 18px;
+    border: 1px solid #FAEEEE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    padding: 20px;
+    vertical-align: middle;
+   }
+   
+   #personal-account:hover{
+    color: #282727;
+    background-color: #F0F0F0;
+    border: 1ps solid #282727;
+   }
+  
+  main {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  footer, header {
+  background-color: #282727;
+  }
+  
+  footer {
+    width: 100%;
+    box-shadow: 0px -10px 4px rgba(0, 0, 0, 0.25);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+    bottom: 0;
+    margin-top: 100px;
+    position: absolute;
+  }
+  
+  #fmito-img {
+    height: 50%;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  #vk-img {
+    height: 25px;
+    text-align: center;
+    position:relative;
+    top: 50px;
+    right: 22%;
+    padding-right: 25px;
+  }
+  #tg-img {
+    height: 25px;
+    text-align: center;
+    position:relative;
+    top: 50px;
+    right: 22%;
+  }
+  /* end of the same code */
+
+form{
+  border: 3px solid #282727;
+  border-radius: 13px;
+  background-color: #F0F0F0;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  max-width: 40%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+h4{
+  text-align: right;
+  margin-right: 20px;
+}

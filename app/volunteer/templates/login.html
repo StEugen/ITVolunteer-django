@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+<link href="{{ url_for('static',filename='css/login.css') }}" rel="stylesheet">
+</head>
+<body>
+<header>
+<h2>IT HUB</h2>
+</header>
+<main>
+<div class="background">
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
+<form method="POST" , action="{{ url_for('login') }}">
+<input type="text" name="username" placeholder="Username" id="username">
+<input type="password" name="password" placeholder="Password" id="password">
+<button>Войти</button>
+</form>
+</main>
+<footer>
+<img src="image1.png" alt="ФФМиТО" class="img1">
+<img src="image2.png" alt="УлГПУ" class="img2">
+<h3>IT HUB - МЕСТО ГДЕ СОБИРАЮТСЯ IT-ВОЛОНТЁРЫ</h3>
+</footer>
+</body>
+</html>

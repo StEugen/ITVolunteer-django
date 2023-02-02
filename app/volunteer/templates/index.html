@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'volunteer/css/index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" 
+     rel="stylesheet">
+     <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <title>News</title>
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    {% csrf_token %}
+    <header>
+     <img src="{% static 'volunteer/images/image2.jpeg' %}" alt="УлГПУ" id="header-img">
+       <h2>IT HUB</h2>
+        <nav id="navbar">
+            <ul class="nav-list">
+                <li>
+                    <a class="links_pages" href="">Новости</a>
+                </li>
+                <li>
+                    <a class="links_pages" href="">Обучение</a>
+                </li>
+                <li>
+                    <a class="links_pages" href="">Доска объявлений</a>
+                </li>
+                <li>
+                    <a href="" id="personal-account">Личный кабинет</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>НОВОСТИ</h1>
+        {% for post in posts %}
+        <article>
+           <h1>
+               {{ post.title }}
+           </h1>
+           <p>
+               {{ post.content }}
+           </p>
+        </article>
+        {% endfor %}
+    </main>
+    <footer>
+        <img src="{% static 'volunteer/images/image1.jpeg' %}" alt="ФФМиТО" id="fmito-img">
+        <h3>IT HUB - МЕСТО ГДЕ СОБИРАЮТСЯ IT-ВОЛОНТЁРЫ</h3>
+        <img src="{% static 'volunteer/images/vk.jpg' %}" alt="vk" id="vk-img" >
+        <img src="{% static 'volunteer/images/tg.jpg' %}" alt="tg" id="tg-img" >
+    </footer>
+</body>
+</html>

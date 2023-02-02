@@ -1,0 +1,62 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+background-color: #d9d9d9;
+}
+
+form {
+  border: 1.5px solid #f0f0f0;
+  border-radius: 1em;
+  background-color: #282727;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.input {
+  border-radius: 3rem;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #f0f0f0;
+  background-color: #282727;
+  font-size: 15px;
+  width: 250px;
+  margin: 15px auto;
+  height: 30px;
+}
+
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
+
+::-webkit-input-placeholder {color:#f0f0f0;}
+::-moz-placeholder          {color:#f0f0f0;}
+:-moz-placeholder           {color:#f0f0f0;}
+:-ms-input-placeholder      {color:#f0f0f0;}
+
+input[type="submit"] {
+  display: block;
+  border: 1.5px solid #f0f0f0;
+  border-radius: 3rem;
+  color: #f0f0f0;
+  background-color: #282727;
+  height: 2em;
+  margin: 7px auto 15px auto;
+  min-width: 100px;
+  font-size: 23px;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+  color: #282727;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); ;
+}
+

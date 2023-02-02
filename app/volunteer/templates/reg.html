@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reg form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Zen+Maru+Gothic:wght@300&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reg.css')}}">
+  </head>
+  <body>
+   <header></header>
+    <main>
+     <form action="{{ url_for('reg')}}", method="POST">
+      <input id="username" name="username" type="text" 
+      class="input"  placeholder="Имя пользователя" required>
+      <input id="password" name="password" type="password"
+      class="input"  placeholder="Пароль" required maxlength="25" minlength="4">
+      <input id="repeat password" name="rep_password" 
+      type="password" class="input" 
+      placeholder="Повторите пароль" required>
+      <input class="button" type="submit" value="Регистрация">
+     </form>
+    </main>
+  <footer>
+  </footer>
+  </body>
+</html>

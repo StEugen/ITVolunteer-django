@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% load static %}
     <title>Reg form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Zen+Maru+Gothic:wght@300&display=swap" 
     rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/reg.css')}}">
+    <link rel="stylesheet" type='text/css' href="{% static 'volunteer/css/reg.css' %}">
   </head>
   <body>
    <header></header>
     <main>
-     <form action="{{ url_for('reg')}}", method="POST">
+     <form action="", method="POST">
       <input id="username" name="username" type="text" 
       class="input"  placeholder="Имя пользователя" required>
       <input id="password" name="password" type="password"

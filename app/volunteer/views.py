@@ -17,6 +17,25 @@ class MainView(TemplateView):
         }
         return context
 
+## Education page view ##
+class EduView(TemplateView):
+    template_name = 'education.html'
+    def get_context_data(self, **kwargs):
+        pass
+
+class DashboardView(TemplateView):
+    template_name = 'dashboard.html'
+    def get_context_data(self, **kwargs):
+        pass
+
+class AccountView(TemplateView):
+    template_name = 'account.html'
+    def get_context_data(self, **kwargs):
+        pass
+
+def addboard(request):
+    pass
+
 ## if user exists then abort(403), fix later ##
 def user_registration(request):
     if request.method == "POST":
@@ -39,4 +58,10 @@ def user_login(request):
             messages.success(request, ("There was a problem"))
             return redirect('volunteer:login')
     return render(request, 'login.html')
+
+def user_logout(request):
+    pass
+
+def shop(request):
+    pass
 

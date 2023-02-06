@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseForbidden, HttpResponse
-from volunteer.models import Dashboards, Volunteers, Blogpost
+from volunteer.models import Dashboards, Blogpost
 from django.views.generic import View, TemplateView, ListView
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class MainView(TemplateView):
@@ -24,8 +25,9 @@ class EduView(TemplateView):
     def get_context_data(self, **kwargs):
         pass
 
-@login_required
-class DashboardView(TemplateView):
+
+class DashboardView(LoginRequiredMixin, TemplateView):
+    login_url = 'volunteer:login'
     template_name = 'dashboard.html'
     def get_context_data(self, **kwargs):
         context = super(DashboardView, self).get_context_data(**kwargs)
@@ -35,8 +37,9 @@ class DashboardView(TemplateView):
         } 
         return context
 
-@login_required
-class AccountView(TemplateView):
+
+class AccountView(LoginRequiredMixin, TemplateView):
+    login_url = 'volunteer:login'
     template_name = 'account.html'
     def get_context_data(self, **kwargs):
         pass

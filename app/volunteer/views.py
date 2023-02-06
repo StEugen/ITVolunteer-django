@@ -5,13 +5,14 @@ from django.views.generic import View, TemplateView, ListView
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 class MainView(TemplateView):
     template_name = 'index.html'
     def get_context_data(self, **kwargs):
         context = super(MainView, self).get_context_data(**kwargs)
-        posts = Blogpost.objects.all()
+        posts = Blogpost.objects.order_by('-id').all()
         context = {
             'posts': posts,
         }
@@ -23,16 +24,24 @@ class EduView(TemplateView):
     def get_context_data(self, **kwargs):
         pass
 
+@login_required
 class DashboardView(TemplateView):
     template_name = 'dashboard.html'
     def get_context_data(self, **kwargs):
-        pass
+        context = super(DashboardView, self).get_context_data(**kwargs)
+        boards = Dashboards.objects.order_by('-id').all()
+        context = {
+            'boards': boards,
+        } 
+        return context
 
+@login_required
 class AccountView(TemplateView):
     template_name = 'account.html'
     def get_context_data(self, **kwargs):
         pass
 
+@login_required
 def addboard(request):
     pass
 
@@ -62,6 +71,7 @@ def user_login(request):
 def user_logout(request):
     pass
 
+@login_required
 def shop(request):
     pass
 

@@ -16,3 +16,5 @@ document.addEventListener("DOMContentLoaded", function(e){
       button.addEventListener("click", dropDown);
     }
   })
+
+  //All classes open when you click on one

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% load static %}
     <title>Reg form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,19 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Zen+Maru+Gothic:wght@300&display=swap" 
     rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/reg.css')}}">
+    <link rel="stylesheet" type='text/css' href="{% static 'volunteer/css/reg.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'volunteer/js/reg.js' %}"></script>
   </head>
   <body>
    <header></header>
     <main>
-     <form action="{{ url_for('reg')}}", method="POST">
+     <form action="{% url 'volunteer:registration' %}", method="POST">
+      {% csrf_token %}
       <input id="username" name="username" type="text" 
-      class="input"  placeholder="Имя пользователя" required>
+      class="input"  placeholder="Имя пользователя" required minlength="4" maxlength="25">
       <input id="password" name="password" type="password"
       class="input"  placeholder="Пароль" required maxlength="25" minlength="4">
-      <input id="repeat password" name="rep_password" 
+      <input id="repeat_password" name="rep_password" 
       type="password" class="input" 
       placeholder="Повторите пароль" required>
+      <span id="message"></span>
       <input class="button" type="submit" value="Регистрация">
      </form>
     </main>

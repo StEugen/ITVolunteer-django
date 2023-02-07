@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseForbidden, HttpResponse
-from volunteer.models import Dashboards, Blogpost
+from volunteer.models import Dashboards, Blogpost, Gids
 from django.views.generic import View, TemplateView, ListView
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
@@ -19,11 +19,16 @@ class MainView(TemplateView):
         }
         return context
 
-## Education page view ##
+
 class EduView(TemplateView):
     template_name = 'education.html'
     def get_context_data(self, **kwargs):
-        pass
+        context = super(EduView, self).get_context_data(**kwargs)
+        gids = Gids.objects.all()
+        context = {
+            'gids': gids,
+        }
+        return context
 
 
 class DashboardView(LoginRequiredMixin, TemplateView):
@@ -37,7 +42,7 @@ class DashboardView(LoginRequiredMixin, TemplateView):
         } 
         return context
 
-
+## info about amount of points ##
 class AccountView(LoginRequiredMixin, TemplateView):
     login_url = 'volunteer:login'
     template_name = 'account.html'

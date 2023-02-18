@@ -12,6 +12,7 @@ urlpatterns = [
     path('dashboards', DashboardView.as_view(), name='dashboards'),
     path('dashboards/addboard', views.addboard, name='addboard'),
     path('dashboards/addboardform', views.board_adding_page, name='addboardform'),
+    path('dashboards/takeboard', views.take_board, name='takeboard'),
     path('education', EduView.as_view(), name='education'),
     path('account', AccountView.as_view(), name='account'),
 ]

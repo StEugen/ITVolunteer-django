@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseForbidden, HttpResponse
 from volunteer.models import Dashboards, Blogpost, Gids
 from django.views.generic import View, TemplateView, ListView
@@ -68,6 +68,13 @@ def addboard(request):
             creator=request.user,
         )
 
+        return redirect('volunteer:dashboards')
+
+def take_board(request, board_id):
+    board = get_object_or_404(Dashboards, pk=board_id)
+    if request.method == "POST":
+        board.taker = request.user
+        board.save()
         return redirect('volunteer:dashboards')
 
 ## if user exists then abort(403), fix later ##

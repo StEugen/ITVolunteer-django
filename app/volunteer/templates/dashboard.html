@@ -33,7 +33,7 @@
     </header>
     <main>
         {% for board in boards %}
-        <form action="" method="POST">
+        <form action="volunteer:takeboard" method="POST">
             <h1>
                 {{ board.title }}
             </h1>

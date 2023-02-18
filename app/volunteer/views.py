@@ -49,9 +49,26 @@ class AccountView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         pass
 
+
+@login_required
+def board_adding_page(request):
+    return render(request, 'board_add_form.html')
+
 @login_required
 def addboard(request):
-    pass
+    if request.method == "POST":
+        title = request.POST.get('title')
+        points = request.POST.get('points')
+        task = request.POST.get('task')
+
+        new_dashboard = Dashboards.objects.create(
+            title=title,
+            points=points,
+            task=task,
+            creator=request.user,
+        )
+
+        return redirect('volunteer:dashboards')
 
 ## if user exists then abort(403), fix later ##
 def user_registration(request):

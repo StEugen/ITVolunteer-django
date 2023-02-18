@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/addboard.css') }}">
+    <link rel="stylesheet" type='text/css' href="{% static 'volunteer/css/addboard.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" 
@@ -10,19 +11,20 @@
     <title>Make a board</title>
 </head>
 <body>
+    {% csrf_token %}
     <header>
-     <img src="{{ url_for('static', filename='images/image2.jpeg')}}" alt="УлГПУ" id="header-img">
+     <img src="" alt="УлГПУ" id="header-img">
        <h2>IT HUB</h2>
         <nav id="navbar">
             <ul class="nav-list">
                 <li>
-                    <a class="links_pages" href="{{ url_for('index') }}">Новости</a>
+                    <a class="links_pages" href="">Новости</a>
                 </li>
                 <li>
-                    <a class="links_pages" href="{{ url_for('education') }}">Обучение</a>
+                    <a class="links_pages" href="">Обучение</a>
                 </li>
                 <li>
-                    <a class="links_pages" href="{{ url_for('dashboard')}}">Доска объявлений</a>
+                    <a class="links_pages" href="">Доска объявлений</a>
                 </li>
                 <li>
                     <a href="" id="personal-account">Личный кабинет</a>
@@ -31,7 +33,8 @@
         </nav>
     </header>
     <main>
-        <form method="POST" action="{{ url_for('addboard') }}">
+        <form method="POST" action="{% url 'volunteer:addboard' %}">
+            {% csrf_token %}
             <input type="text" id="title" placeholder="Title" name="title" 
             required data-validation-required-message="Please enter a title."><br><br>
             <input type="number" id="points" placeholder="Points" name="points" min="1"
@@ -42,10 +45,10 @@
         </form>
     </main>
     <footer>
-        <img src="{{ url_for('static', filename='images/image1.jpeg') }}" alt="ФФМиТО" id="fmito-img">
+        <img src="" alt="ФФМиТО" id="fmito-img">
         <h3>IT HUB - МЕСТО ГДЕ СОБИРАЮТСЯ IT-ВОЛОНТЁРЫ</h3>
-        <img src="{{ url_for('static', filename='images/vk.jpg') }}" alt="vk" id="vk-img" >
-        <img src="{{ url_for('static', filename='images/tg.jpg') }}" alt="tg" id="tg-img" >
+        <img src="" alt="vk" id="vk-img" >
+        <img src="" alt="tg" id="tg-img" >
     </footer>
 </body>
 </html>
